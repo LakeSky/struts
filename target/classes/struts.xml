@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<!-- 开启使用开发模式，详细错误提示 -->
+	<constant name="struts.devMode" value="true" />
+	<!-- 将对象交给spring管理 -->
+	<constant name="struts.objectFactory" value="spring" />
+	<!-- 指定资源编码类型 -->
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<!-- 指定每次请求到达，重新加载资源文件 -->
+	<constant name="struts.i18n.reload" value="true" />
+	<!-- 指定每次配置文件更改后，自动重新加载 -->
+	<constant name="struts.configuration.xml.reload" value="true" />
+	<!-- 国际化资源文件 -->
+	<constant name="struts.custom.i18n.resources" value="content/Language" />
+	<!-- 浏览器缓存 -->
+	<constant name="struts.serve.static.browserCache" value="false" />
+	<!-- 默认后缀名 -->
+	<constant name="struts.action.extension" value="do,action,jhtml,," />
+	<!-- 系统常量定义，定义上传文件临时存放路径 -->
+	<constant name="struts.multipart.saveDir" value="c:/temp" />
+	<!-- 配置上传文件请求内容中最大字节数 -->
+	<constant name="struts.multipart.maxSize" value="1000000000" />
+	<!-- 引入Struts2子配置 -->
+	<include file="struts/struts-*.xml" />
+	<!-- Struts Annotation -->
+	<constant name="actionPackages" value="thettian.study.application" />
+	
+	<constant name="struts.enable.DynamicMethodInvocation" value="false"></constant>
+</struts>
