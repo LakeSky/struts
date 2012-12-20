@@ -32,4 +32,24 @@ public interface PublicService {
 	 * @return
 	 */
 	public List<Task> findAllTasks();
+
+	/**
+	 * 更新个人信息
+	 * @param _user
+	 * @return
+	 */
+	public User updateUser(User _user);
+
+	/**
+	 * 根据ID查询部门
+	 * @param id
+	 * @return
+	 */
+	public Department findDeptById(Integer id);
+	
+	public User findUserById(Integer id);
+
+	public List<User> findUserByManager();
+
+	public Task findTaskById(Integer taskid);
 }

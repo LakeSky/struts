@@ -20,6 +20,8 @@ public class Task {
 	private Integer Id;
 	@Column(name = "name")
 	private String Name;
+	@Column(name = "content")
+	private String Content;
 	@Column(name = "status")
 	private String Status;
 	@Column(name = "lastTime")
@@ -43,6 +45,12 @@ public class Task {
 	}
 	public void setName(String name) {
 		Name = name;
+	}
+	public String getContent() {
+		return Content;
+	}
+	public void setContent(String content) {
+		Content = content;
 	}
 	public String getStatus() {
 		return Status;

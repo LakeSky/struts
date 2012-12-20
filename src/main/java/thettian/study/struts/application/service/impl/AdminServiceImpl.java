@@ -31,9 +31,7 @@ public class AdminServiceImpl implements AdminService{
 
 	@Override
 	@Transactional
-	public Department addDepartment(Department department,User manager) {
-		User _u = userDao.save(manager);
-		department.setManager(_u);
+	public Department addDepartment(Department department) {
 		departmentDao.save(department);
 		return department;
 	}
@@ -58,6 +56,19 @@ public class AdminServiceImpl implements AdminService{
 			taskDao.delete(taskId);
 		return _t;
 	}
+	
+	@Override
+	public User deleteUser(Integer userId) {
+		User _u = userDao.findOne(userId);
+		if(_u != null)
+			userDao.delete(userId);
+		return _u;
+	}
+	
+	@Override
+	public User updateUser(User user) {
+		return userDao.save(user);
+	}
 
 	@Override
 	public Department updateDepartment(Department dept) {
@@ -67,8 +78,7 @@ public class AdminServiceImpl implements AdminService{
 
 	@Override
 	public Task updateTask(Task task) {
-		// TODO Auto-generated method stub
-		return null;
+		return taskDao.save(task);
 	}
 
 }

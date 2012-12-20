@@ -54,4 +54,10 @@ public interface ManagerService {
 	 * @return
 	 */
 	public User updateUser(User user);
+
+	public List<User> findUserByDept(Integer deptid);
+
+	public List<Task> findMyTasks(Integer deptId);
+
+	public List<Task> findDeptTasks(Integer userId);
 }

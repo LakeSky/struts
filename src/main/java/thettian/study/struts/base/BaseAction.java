@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.apache.struts2.convention.annotation.Result;
+import org.apache.struts2.convention.annotation.Results;
 import org.apache.struts2.interceptor.ServletRequestAware;
 import org.apache.struts2.interceptor.ServletResponseAware;
 import org.apache.struts2.interceptor.SessionAware;
@@ -21,8 +23,12 @@ import com.opensymphony.xwork2.ActionSupport;
  * 
  * @author ethan
  */
-public class BaseAction extends ActionSupport implements ServletContextAware, ServletResponseAware,
-		ServletRequestAware, SessionAware {
+@Results({ @Result(name = "manager", location = "/manager/manager.jsp"),
+		@Result(name = "admin", location = "/admin/admin.jsp"),
+		@Result(name = "worker", location = "/worker/worker.jsp"),
+		@Result(name = "logout", location = "/index.jsp") })
+public class BaseAction extends ActionSupport implements ServletContextAware,
+		ServletResponseAware, ServletRequestAware, SessionAware {
 
 	private static final long serialVersionUID = 1L;
 
@@ -37,6 +43,26 @@ public class BaseAction extends ActionSupport implements ServletContextAware, Se
 	protected HttpSession httpSession;
 
 	protected Map<String, Object> session;
+	// 网页中提示的信息
+	private String Tips;
+	// 提示类型，三种：info,success,error
+	private String AlertType;
+
+	public String getTips() {
+		return Tips;
+	}
+
+	public void setTips(String tips) {
+		Tips = tips;
+	}
+
+	public String getAlertType() {
+		return AlertType;
+	}
+
+	public void setAlertType(String alertType) {
+		AlertType = alertType;
+	}
 
 	@Override
 	public void setServletContext(ServletContext context) {

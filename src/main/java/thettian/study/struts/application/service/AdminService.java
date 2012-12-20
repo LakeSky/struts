@@ -21,7 +21,7 @@ public interface AdminService {
 	 * @param department
 	 * @return
 	 */
-	public Department addDepartment(Department department,User manager);
+	public Department addDepartment(Department department);
 
 	/**
 	 * 添加任务信息
@@ -60,4 +60,8 @@ public interface AdminService {
 	 * @return
 	 */
 	public Task updateTask(Task task);
+
+	public User deleteUser(Integer userId);
+
+	public User updateUser(User user);
 }
