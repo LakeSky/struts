@@ -220,7 +220,7 @@ public class AdminAction extends BaseAction {
 			setTips("添加部门成功！");
 		} catch (Exception e) {
 			setAlertType("error");
-			setTips("该部门已存在！");
+			setTips("该部门eeeeeeeee！");
 		}
 		return SUCCESS;
 	}
